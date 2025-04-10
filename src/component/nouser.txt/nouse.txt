@@ -1,0 +1,283 @@
+// import React, { useState, useCallback } from "react";
+// import ReactFlow, {
+//   Background,
+//   Controls,
+//   Edge,
+//   Node,
+//   useNodesState,
+//   useEdgesState,
+// } from "reactflow";
+// import "reactflow/dist/style.css";
+// import { motion, AnimatePresence } from "framer-motion";
+
+// type RoadmapStep = {
+//   id: string;
+//   label: string;
+//   completed: boolean;
+//   details: string;
+//   additionalTopics: string[];
+//   prerequisites: string[];
+// };
+
+// const initialNodes: Node<RoadmapStep>[] = [
+//   {
+//     id: "1",
+//     position: { x: 100, y: 50 },
+//     data: {
+//       label: "HTML & CSS",
+//       completed: true,
+//       details: "Learn semantic HTML, CSS Grid & Flexbox, and responsive design.",
+//       additionalTopics: ["CSS Animations", "SCSS", "Bootstrap & Tailwind"],
+//       prerequisites: ["Basic Computer Knowledge"],
+//     },
+//     type: "input",
+//   },
+//   {
+//     id: "2",
+//     position: { x: 300, y: 150 },
+//     data: {
+//       label: "JavaScript",
+//       completed: false,
+//       details: "Master ES6, closures, async/await, and DOM manipulation.",
+//       additionalTopics: ["TypeScript", "JavaScript ES6+", "Event Loop"],
+//       prerequisites: ["HTML & CSS"],
+//     },
+//     type: "default",
+//   },
+//   {
+//     id: "3",
+//     position: { x: 500, y: 250 },
+//     data: {
+//       label: "React.js",
+//       completed: false,
+//       details: "Learn hooks, state management, props drilling, and component lifecycle.",
+//       additionalTopics: ["Next.js", "Redux", "React Performance Optimization"],
+//       prerequisites: ["JavaScript Basics"],
+//     },
+//     type: "default",
+//   },
+//   {
+//     id: "4",
+//     position: { x: 700, y: 350 },
+//     data: {
+//       label: "Node.js",
+//       completed: false,
+//       details: "Understand Express.js, APIs, and middleware.",
+//       additionalTopics: ["GraphQL", "WebSockets", "Authentication"],
+//       prerequisites: ["JavaScript Basics"],
+//     },
+//     type: "default",
+//   },
+//   {
+//     id: "5",
+//     position: { x: 900, y: 450 },
+//     data: {
+//       label: "MongoDB",
+//       completed: false,
+//       details: "Learn NoSQL databases, Mongoose, and aggregation pipelines.",
+//       additionalTopics: ["PostgreSQL", "Firebase", "Database Indexing"],
+//       prerequisites: ["Node.js"],
+//     },
+//     type: "default",
+//   },
+//   {
+//     id: "6",
+//     position: { x: 1100, y: 550 },
+//     data: {
+//       label: "Full-Stack Projects",
+//       completed: false,
+//       details: "Build real-world applications to strengthen your portfolio.",
+//       additionalTopics: ["Testing (Jest, Cypress)", "DevOps Basics", "Cloud Deployment"],
+//       prerequisites: ["React.js", "Node.js", "MongoDB"],
+//     },
+//     type: "output",
+//   },
+// ];
+
+// const initialEdges: Edge[] = [
+//   { id: "e1-2", source: "1", target: "2", animated: true },
+//   { id: "e2-3", source: "2", target: "3", animated: true },
+//   { id: "e3-4", source: "3", target: "4", animated: true },
+//   { id: "e4-5", source: "4", target: "5", animated: true },
+//   { id: "e5-6", source: "5", target: "6", animated: true },
+// ];
+
+// export default function InteractiveRoadmap() {
+//   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
+//   const [edges, , onEdgesChange] = useEdgesState(initialEdges);
+//   const [hoveredSkill, setHoveredSkill] = useState<RoadmapStep | null>(null);
+
+//   const handleNodeClick = useCallback((event: React.MouseEvent, node: Node<RoadmapStep>) => {
+//     setNodes((nds) =>
+//       nds.map((n) =>
+//         n.id === node.id ? { ...n, data: { ...n.data, completed: !n.data.completed } } : n
+//       )
+//     );
+//   }, []);
+
+//   return (
+//     <div className="h-screen w-full bg-gray-900 flex flex-col items-center justify-center text-white p-8">
+//       <h1 className="text-3xl font-bold mb-4">🚀 Interactive Career Roadmap</h1>
+      
+//       {/* <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}> */}
+//         <div className="h-[600px] w-[90%] bg-gray-800 rounded-lg shadow-lg relative">
+          
+//           {/* React Flow Container */}
+//           <ReactFlow
+//             nodes={nodes.map((node) => ({
+//               ...node,
+//               style: {
+//                 backgroundColor: node.data.completed ? "#4CAF50" : "#1F2937",
+//                 color: "#fff",
+//                 padding: "12px",
+//                 borderRadius: "10px",
+//                 border: node.data.completed ? "2px solid #34D399" : "2px solid #374151",
+//                 fontWeight: "bold",
+//                 cursor: "pointer",
+//               },
+//             }))}
+//             edges={edges}
+//             onNodesChange={onNodesChange}
+//             onEdgesChange={onEdgesChange}
+//             onNodeClick={handleNodeClick}
+//             onNodeMouseEnter={(_, node) => setHoveredSkill(node.data)}
+//             onNodeMouseLeave={() => setHoveredSkill(null)}
+//             fitView
+//           >
+//             <Background />
+//             <Controls />
+//           </ReactFlow>
+
+//           {/* Expanded Skill Details */}
+//           <AnimatePresence>
+//             {hoveredSkill && (
+//               <motion.div 
+//                 className="absolute bottom-10 left-1/2 transform -translate-x-1/2 bg-gray-700 p-6 rounded-lg shadow-lg w-[400px]"
+//                 initial={{ opacity: 0, y: 10 }} 
+//                 animate={{ opacity: 1, y: 0 }}
+//                 exit={{ opacity: 0, y: 10 }}
+//               >
+//                 <h3 className="text-xl font-bold mb-2">{hoveredSkill.label}</h3>
+//                 <p className="text-sm text-gray-300 mb-2">{hoveredSkill.details}</p>
+                
+//                 {/* Prerequisites */}
+//                 <div className="mb-2">
+//                   <h4 className="text-md font-semibold">📌 Prerequisites:</h4>
+//                   <ul className="list-disc pl-4 text-gray-300 text-sm">
+//                     {hoveredSkill.prerequisites.map((pre, index) => (
+//                       <li key={index}>{pre}</li>
+//                     ))}
+//                   </ul>
+//                 </div>
+
+//                 {/* Additional Topics */}
+//                 <div>
+//                   <h4 className="text-md font-semibold">📖 Additional Topics:</h4>
+//                   <ul className="list-disc pl-4 text-gray-300 text-sm">
+//                     {hoveredSkill.additionalTopics.map((topic, index) => (
+//                       <li key={index}>{topic}</li>
+//                     ))}
+//                   </ul>
+//                 </div>
+//               </motion.div>
+//             )}
+//           </AnimatePresence>
+//         </div>
+//       {/* </motion.div> */}
+//     </div>
+//   );
+// }
+
+// else anythign; kj**************************************************************************************************************
+
+// import React, { useState } from "react";
+// import { motion } from "framer-motion";
+
+// type Skill = {
+//   id: string;
+//   name: string;
+//   description: string;
+//   topics: string[];
+//   prerequisites: string[];
+// };
+
+// const skillsData: Skill[] = [
+//   {
+//     id: "html-css",
+//     name: "HTML & CSS",
+//     description: "Learn the building blocks of web development.",
+//     topics: ["Flexbox", "Grid", "Responsive Design", "Tailwind CSS"],
+//     prerequisites: ["Basic Computer Knowledge"],
+//   },
+//   {
+//     id: "javascript",
+//     name: "JavaScript",
+//     description: "Master ES6, async/await, and DOM manipulation.",
+//     topics: ["ES6+", "Event Loop", "Promises", "Closures"],
+//     prerequisites: ["HTML & CSS"],
+//   },
+//   {
+//     id: "reactjs",
+//     name: "React.js",
+//     description: "Learn components, hooks, and state management.",
+//     topics: ["Hooks", "Context API", "React Router", "Next.js"],
+//     prerequisites: ["JavaScript Basics"],
+//   },
+//   {
+//     id: "nodejs",
+//     name: "Node.js",
+//     description: "Backend development with Express and databases.",
+//     topics: ["Express.js", "MongoDB", "JWT Auth", "REST APIs"],
+//     prerequisites: ["JavaScript", "Basic Backend Knowledge"],
+//   },
+// ];
+
+// export default function SkillsRoadmap() {
+//   const [selectedSkill, setSelectedSkill] = useState<string | null>(null);
+
+//   return (
+//     <div className="h-screen w-full bg-gray-900 flex flex-col items-center justify-center p-8 text-white">
+//       <h1 className="text-3xl font-bold mb-6">🚀 Skills Roadmap</h1>
+
+//       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full max-w-4xl">
+//         {skillsData.map((skill) => (
+//           <motion.div
+//             key={skill.id}
+//             onClick={() => setSelectedSkill(skill.id === selectedSkill ? null : skill.id)}
+//             className={`cursor-pointer p-4 rounded-lg transition-all duration-300 shadow-lg ${
+//               selectedSkill === skill.id ? "col-span-2 md:col-span-3 lg:col-span-4 bg-green-700" : "bg-gray-800"
+//             }`}
+//             initial={{ scale: 1 }}
+//             whileHover={{ scale: 1.05 }}
+//           >
+//             <h2 className="text-lg font-semibold">{skill.name}</h2>
+//             {selectedSkill === skill.id && (
+//               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }}>
+//                 <p className="mt-2 text-gray-300">{skill.description}</p>
+
+//                 <div className="mt-2">
+//                   <p className="text-sm font-semibold">Topics:</p>
+//                   <ul className="list-disc list-inside text-sm text-gray-300">
+//                     {skill.topics.map((topic, idx) => (
+//                       <li key={idx}>{topic}</li>
+//                     ))}
+//                   </ul>
+//                 </div>
+
+//                 <div className="mt-2">
+//                   <p className="text-sm font-semibold">Prerequisites:</p>
+//                   <ul className="list-disc list-inside text-sm text-gray-300">
+//                     {skill.prerequisites.map((prereq, idx) => (
+//                       <li key={idx}>{prereq}</li>
+//                     ))}
+//                   </ul>
+//                 </div>
+//               </motion.div>
+//             )}
+//           </motion.div>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// }
+// 

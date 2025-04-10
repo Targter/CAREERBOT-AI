@@ -1,0 +1,1533 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div
+      style="
+        position: absolute;
+        inset: 0px;
+        overflow: hidden;
+        pointer-events: none;
+        user-select: none;
+        z-index: 0;
+        background-color: black;
+      "
+    >
+      <style>
+        @keyframes float-0 {
+          0% {
+            transform: translate(0, 0);
+            opacity: 0.6;
+          }
+          50% {
+            transform: translate(15px, -15px);
+            opacity: 0.8;
+          }
+          100% {
+            transform: translate(0, 0);
+            opacity: 0.6;
+          }
+        }
+
+        @keyframes float-1 {
+          0% {
+            transform: translate(0, 0);
+            opacity: 0.6;
+          }
+          50% {
+            transform: translate(-10px, -20px);
+            opacity: 0.8;
+          }
+          100% {
+            transform: translate(0, 0);
+            opacity: 0.6;
+          }
+        }
+
+        @keyframes float-2 {
+          0% {
+            transform: translate(0, 0);
+            opacity: 0.6;
+          }
+          50% {
+            transform: translate(20px, -10px);
+            opacity: 0.8;
+          }
+          100% {
+            transform: translate(0, 0);
+            opacity: 0.6;
+          }
+        }
+
+        .regional-text {
+          background: linear-gradient(
+            45deg,
+            rgba(167, 139, 250, 0.6),
+            rgba(139, 92, 246, 0.6)
+          );
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          filter: drop-shadow(0 0 8px rgba(167, 139, 250, 0.3));
+        }
+
+        .regional-text:hover {
+          opacity: 0.9;
+          filter: drop-shadow(0 0 12px rgba(167, 139, 250, 0.5));
+        }
+
+        /* Mobile-specific styles */
+        @media (max-width: 768px) {
+          .regional-text {
+            font-size: clamp(0.7rem, 0.5rem + 1vw, 1rem) !important;
+            transform: scale(0.85) !important;
+          }
+
+          /* Spread words more on mobile by adjusting their positions */
+          .regional-text:nth-child(odd) {
+            transform: translateX(-10vw) scale(0.85) !important;
+          }
+
+          .regional-text:nth-child(even) {
+            transform: translateX(10vw) scale(0.85) !important;
+          }
+
+          /* Adjust vertical spacing */
+          .regional-text:nth-child(3n) {
+            transform: translateY(-5vh) scale(0.85) !important;
+          }
+
+          .regional-text:nth-child(3n + 1) {
+            transform: translateY(5vh) scale(0.85) !important;
+          }
+        }
+      </style>
+      <div
+        class="regional-text"
+        title="Innovation (Hindi)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.2rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 0%;
+          top: 0%;
+          animation: 5s ease-in-out 0s infinite normal none running float-0;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        नवोन्मेष
+      </div>
+      <div
+        class="regional-text"
+        title="Creative (Telugu)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.5rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 17%;
+          top: 13%;
+          animation: 6s ease-in-out 0.5s infinite normal none running float-1;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        సృజనాత్మక
+      </div>
+      <div
+        class="regional-text"
+        title="Innovation (Tamil)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.8rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 34%;
+          top: 26%;
+          animation: 7s ease-in-out 1s infinite normal none running float-2;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        புத்தாக்கம்
+      </div>
+      <div
+        class="regional-text"
+        title="Creativity (Kannada)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.2rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 51%;
+          top: 39%;
+          animation: 8s ease-in-out 1.5s infinite normal none running float-0;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        ಸೃಜನಶೀಲತೆ
+      </div>
+      <div
+        class="regional-text"
+        title="Innovation (Bengali)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.5rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 68%;
+          top: 52%;
+          animation: 5s ease-in-out 2s infinite normal none running float-1;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        উদ্ভাবন
+      </div>
+      <div
+        class="regional-text"
+        title="Novelty (Gujarati)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.8rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 85%;
+          top: 65%;
+          animation: 6s ease-in-out 2.5s infinite normal none running float-2;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        નવીનતા
+      </div>
+      <div
+        class="regional-text"
+        title="Innovation (Urdu)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.2rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 2%;
+          top: 78%;
+          animation: 7s ease-in-out 3s infinite normal none running float-0;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        جدت
+      </div>
+      <div
+        class="regional-text"
+        title="Progress (Malayalam)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.5rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 19%;
+          top: 91%;
+          animation: 8s ease-in-out 3.5s infinite normal none running float-1;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        പുരോഗതി
+      </div>
+      <div
+        class="regional-text"
+        title="Technology (Odia)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.8rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 36%;
+          top: 4%;
+          animation: 5s ease-in-out 4s infinite normal none running float-2;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        ପ୍ରଯୁକ୍ତି
+      </div>
+      <div
+        class="regional-text"
+        title="Technology (Marathi)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.2rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 53%;
+          top: 17%;
+          animation: 6s ease-in-out 4.5s infinite normal none running float-0;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        तंत्रज्ञान
+      </div>
+      <div
+        class="regional-text"
+        title="AI (Hindi)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.5rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 70%;
+          top: 30%;
+          animation: 7s ease-in-out 5s infinite normal none running float-1;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        एआई
+      </div>
+      <div
+        class="regional-text"
+        title="Machine Learning (Telugu)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.8rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 87%;
+          top: 43%;
+          animation: 8s ease-in-out 5.5s infinite normal none running float-2;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        మెషిన్ లెర్నింగ్
+      </div>
+      <div
+        class="regional-text"
+        title="Artificial Intelligence (Tamil)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.2rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 4%;
+          top: 56%;
+          animation: 5s ease-in-out 6s infinite normal none running float-0;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        செயற்கை நுண்ணறிவு
+      </div>
+      <div
+        class="regional-text"
+        title="Future (Hindi)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.5rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 21%;
+          top: 69%;
+          animation: 6s ease-in-out 6.5s infinite normal none running float-1;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        भविष्य
+      </div>
+      <div
+        class="regional-text"
+        title="Future (Telugu)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.8rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 38%;
+          top: 82%;
+          animation: 7s ease-in-out 7s infinite normal none running float-2;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        భవిష్యత్తు
+      </div>
+      <div
+        class="regional-text"
+        title="Future (Tamil)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.2rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 55%;
+          top: 95%;
+          animation: 8s ease-in-out 7.5s infinite normal none running float-0;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        எதிர்காலம்
+      </div>
+      <div
+        class="regional-text"
+        title="Vision (Kannada)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.5rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 72%;
+          top: 8%;
+          animation: 5s ease-in-out 8s infinite normal none running float-1;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        ದೂರದೃಷ್ಟಿ
+      </div>
+      <div
+        class="regional-text"
+        title="Dream (Bengali)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.8rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 89%;
+          top: 21%;
+          animation: 6s ease-in-out 8.5s infinite normal none running float-2;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        স্বপ্ন
+      </div>
+      <div
+        class="regional-text"
+        title="Build (Hindi)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.2rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 6%;
+          top: 34%;
+          animation: 7s ease-in-out 9s infinite normal none running float-0;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        निर्माण
+      </div>
+      <div
+        class="regional-text"
+        title="Design (Telugu)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.5rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 23%;
+          top: 47%;
+          animation: 8s ease-in-out 9.5s infinite normal none running float-1;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        రూపకల్పన
+      </div>
+      <div
+        class="regional-text"
+        title="Creation (Tamil)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.8rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 40%;
+          top: 60%;
+          animation: 5s ease-in-out 10s infinite normal none running float-2;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        படைப்பு
+      </div>
+      <div
+        class="regional-text"
+        title="Create (Kannada)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.2rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 57%;
+          top: 73%;
+          animation: 6s ease-in-out 10.5s infinite normal none running float-0;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        ಸೃಷ್ಟಿಸು
+      </div>
+      <div
+        class="regional-text"
+        title="Creation (Bengali)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.5rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 74%;
+          top: 86%;
+          animation: 7s ease-in-out 11s infinite normal none running float-1;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        সৃষ্টি
+      </div>
+      <div
+        class="regional-text"
+        title="Digital (Hindi)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.8rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 91%;
+          top: 99%;
+          animation: 8s ease-in-out 11.5s infinite normal none running float-2;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        ডিজিटল
+      </div>
+      <div
+        class="regional-text"
+        title="Cyber (Telugu)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.2rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 8%;
+          top: 12%;
+          animation: 5s ease-in-out 12s infinite normal none running float-0;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        సైబర్
+      </div>
+      <div
+        class="regional-text"
+        title="Software (Tamil)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.5rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 25%;
+          top: 25%;
+          animation: 6s ease-in-out 12.5s infinite normal none running float-1;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        மென்பொருள்
+      </div>
+      <div
+        class="regional-text"
+        title="Artificial (Kannada)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.8rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 42%;
+          top: 38%;
+          animation: 7s ease-in-out 13s infinite normal none running float-2;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        ಕೃತಕ
+      </div>
+      <div
+        class="regional-text"
+        title="Internet (Bengali)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.2rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 59%;
+          top: 51%;
+          animation: 8s ease-in-out 13.5s infinite normal none running float-0;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        ইন্টারনেট
+      </div>
+      <div
+        class="regional-text"
+        title="Solution (Hindi)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.5rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 76%;
+          top: 64%;
+          animation: 5s ease-in-out 14s infinite normal none running float-1;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        समाधान
+      </div>
+      <div
+        class="regional-text"
+        title="Solution (Telugu)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.8rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 93%;
+          top: 77%;
+          animation: 6s ease-in-out 14.5s infinite normal none running float-2;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        పరిష్కారం
+      </div>
+      <div
+        class="regional-text"
+        title="Solution (Tamil)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.2rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 10%;
+          top: 90%;
+          animation: 7s ease-in-out 15s infinite normal none running float-0;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        தீர்வு
+      </div>
+      <div
+        class="regional-text"
+        title="Solution (Kannada)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.5rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 27%;
+          top: 3%;
+          animation: 8s ease-in-out 15.5s infinite normal none running float-1;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        ಪರಿಹಾರ
+      </div>
+      <div
+        class="regional-text"
+        title="Blockchain (Hindi)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.8rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 44%;
+          top: 16%;
+          animation: 5s ease-in-out 16s infinite normal none running float-2;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        ब्लॉकचेन
+      </div>
+      <div
+        class="regional-text"
+        title="Cloud (Telugu)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.2rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 61%;
+          top: 29%;
+          animation: 6s ease-in-out 16.5s infinite normal none running float-0;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        క్లౌడ్
+      </div>
+      <div
+        class="regional-text"
+        title="Metaverse (Tamil)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.5rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 78%;
+          top: 42%;
+          animation: 7s ease-in-out 17s infinite normal none running float-1;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        மெட்டாவெர்ஸ்
+      </div>
+      <div
+        class="regional-text"
+        title="Robotics (Kannada)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.8rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 95%;
+          top: 55%;
+          animation: 8s ease-in-out 17.5s infinite normal none running float-2;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        ರೋಬೋಟಿಕ್ಸ್
+      </div>
+      <div
+        class="regional-text"
+        title="Transform (Hindi)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.2rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 12%;
+          top: 68%;
+          animation: 5s ease-in-out 18s infinite normal none running float-0;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        परिवर्तन
+      </div>
+      <div
+        class="regional-text"
+        title="Change (Telugu)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.5rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 29%;
+          top: 81%;
+          animation: 6s ease-in-out 18.5s infinite normal none running float-1;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        మార్పు
+      </div>
+      <div
+        class="regional-text"
+        title="Change (Tamil)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.8rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 46%;
+          top: 94%;
+          animation: 7s ease-in-out 19s infinite normal none running float-2;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        மாற்றம்
+      </div>
+      <div
+        class="regional-text"
+        title="Change (Kannada)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.2rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 63%;
+          top: 7%;
+          animation: 8s ease-in-out 19.5s infinite normal none running float-0;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        ಬದಲಾವಣೆ
+      </div>
+      <div
+        class="regional-text"
+        title="Skill (Hindi)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.5rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 80%;
+          top: 20%;
+          animation: 5s ease-in-out 20s infinite normal none running float-1;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        कौशल
+      </div>
+      <div
+        class="regional-text"
+        title="Skill (Telugu)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.8rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 97%;
+          top: 33%;
+          animation: 6s ease-in-out 20.5s infinite normal none running float-2;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        నైపుణ్యం
+      </div>
+      <div
+        class="regional-text"
+        title="Knowledge (Tamil)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.2rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 14%;
+          top: 46%;
+          animation: 7s ease-in-out 21s infinite normal none running float-0;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        அறிவு
+      </div>
+      <div
+        class="regional-text"
+        title="Science (Kannada)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.5rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 31%;
+          top: 59%;
+          animation: 8s ease-in-out 21.5s infinite normal none running float-1;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        ವಿಜ್ಞಾನ
+      </div>
+      <div
+        class="regional-text"
+        title="Robotics (Hindi)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.8rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 48%;
+          top: 72%;
+          animation: 5s ease-in-out 22s infinite normal none running float-2;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        रोबोटिक्स
+      </div>
+      <div
+        class="regional-text"
+        title="Quantum (Telugu)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.2rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 65%;
+          top: 85%;
+          animation: 6s ease-in-out 22.5s infinite normal none running float-0;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        క్వాంటం
+      </div>
+      <div
+        class="regional-text"
+        title="Internet (Tamil)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.5rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 82%;
+          top: 98%;
+          animation: 7s ease-in-out 23s infinite normal none running float-1;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        இணையம்
+      </div>
+      <div
+        class="regional-text"
+        title="Data (Kannada)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.8rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 99%;
+          top: 11%;
+          animation: 8s ease-in-out 23.5s infinite normal none running float-2;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        ಡೇಟಾ
+      </div>
+      <div
+        class="regional-text"
+        title="Innovation (Punjabi)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.2rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 16%;
+          top: 24%;
+          animation: 5s ease-in-out 24s infinite normal none running float-0;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        ਨਵੀਨਤਾ
+      </div>
+      <div
+        class="regional-text"
+        title="Technology (Punjabi)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.5rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 33%;
+          top: 37%;
+          animation: 6s ease-in-out 24.5s infinite normal none running float-1;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        ਤਕਨਾਲੋਜੀ
+      </div>
+      <div
+        class="regional-text"
+        title="Computer (Punjabi)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.8rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 50%;
+          top: 50%;
+          animation: 7s ease-in-out 25s infinite normal none running float-2;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        ਕੰਪਿਊਟਰ
+      </div>
+      <div
+        class="regional-text"
+        title="Science (Punjabi)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.2rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 67%;
+          top: 63%;
+          animation: 8s ease-in-out 25.5s infinite normal none running float-0;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        ਵਿਗਿਆਨ
+      </div>
+      <div
+        class="regional-text"
+        title="Future (Punjabi)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.5rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 84%;
+          top: 76%;
+          animation: 5s ease-in-out 26s infinite normal none running float-1;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        ਭਵਿੱਖ
+      </div>
+      <div
+        class="regional-text"
+        title="Intelligent (Punjabi)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.8rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 1%;
+          top: 89%;
+          animation: 6s ease-in-out 26.5s infinite normal none running float-2;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        ਬੁੱਧੀਮਾਨ
+      </div>
+      <div
+        class="regional-text"
+        title="Network (Punjabi)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.2rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 18%;
+          top: 2%;
+          animation: 7s ease-in-out 27s infinite normal none running float-0;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        ਨੈੱਟਵਰਕ
+      </div>
+      <div
+        class="regional-text"
+        title="Technology (Bengali)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.5rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 35%;
+          top: 15%;
+          animation: 8s ease-in-out 27.5s infinite normal none running float-1;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        প্রযুক্তি
+      </div>
+      <div
+        class="regional-text"
+        title="Artificial Intelligence (Bengali)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.8rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 52%;
+          top: 28%;
+          animation: 5s ease-in-out 28s infinite normal none running float-2;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        কৃত্রিম বুদ্ধিমত্তা
+      </div>
+      <div
+        class="regional-text"
+        title="Digital (Bengali)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.2rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 69%;
+          top: 41%;
+          animation: 6s ease-in-out 28.5s infinite normal none running float-0;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        ডিজিটাল
+      </div>
+      <div
+        class="regional-text"
+        title="Future (Bengali)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.5rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 86%;
+          top: 54%;
+          animation: 7s ease-in-out 29s infinite normal none running float-1;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        ভবিষ্যৎ
+      </div>
+      <div
+        class="regional-text"
+        title="Research (Bengali)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.8rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 3%;
+          top: 67%;
+          animation: 8s ease-in-out 29.5s infinite normal none running float-2;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        গবেষণা
+      </div>
+      <div
+        class="regional-text"
+        title="Innovator (Bengali)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.2rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 20%;
+          top: 80%;
+          animation: 5s ease-in-out 30s infinite normal none running float-0;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        উদ্ভাবক
+      </div>
+      <div
+        class="regional-text"
+        title="Development (Bengali)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.5rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 37%;
+          top: 93%;
+          animation: 6s ease-in-out 30.5s infinite normal none running float-1;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        বিকাশ
+      </div>
+      <div
+        class="regional-text"
+        title="Technical (Odia)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.8rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 54%;
+          top: 6%;
+          animation: 7s ease-in-out 31s infinite normal none running float-2;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        ବୈଷୟିକ
+      </div>
+      <div
+        class="regional-text"
+        title="Innovative (Odia)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.2rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 71%;
+          top: 19%;
+          animation: 8s ease-in-out 31.5s infinite normal none running float-0;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        ଅଭିନବ
+      </div>
+      <div
+        class="regional-text"
+        title="Computer (Odia)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.5rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 88%;
+          top: 32%;
+          animation: 5s ease-in-out 32s infinite normal none running float-1;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        କମ୍ପ୍ୟୁଟର
+      </div>
+      <div
+        class="regional-text"
+        title="Development (Odia)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.8rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 5%;
+          top: 45%;
+          animation: 6s ease-in-out 32.5s infinite normal none running float-2;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        ବିକାଶ
+      </div>
+      <div
+        class="regional-text"
+        title="Future (Odia)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.2rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 22%;
+          top: 58%;
+          animation: 7s ease-in-out 33s infinite normal none running float-0;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        ଭବିଷ୍ୟତ
+      </div>
+      <div
+        class="regional-text"
+        title="Digital (Odia)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.5rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 39%;
+          top: 71%;
+          animation: 8s ease-in-out 33.5s infinite normal none running float-1;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        ଡିଜିଟାଲ
+      </div>
+      <div
+        class="regional-text"
+        title="Network (Odia)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.8rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 56%;
+          top: 84%;
+          animation: 5s ease-in-out 34s infinite normal none running float-2;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        ନେଟୱାର୍କ
+      </div>
+      <div
+        class="regional-text"
+        title="Science (Odia)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.2rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 73%;
+          top: 97%;
+          animation: 6s ease-in-out 34.5s infinite normal none running float-0;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        ବିଜ୍ଞାନ
+      </div>
+      <div
+        class="regional-text"
+        title="Cloud (Punjabi)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.5rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 90%;
+          top: 10%;
+          animation: 7s ease-in-out 35s infinite normal none running float-1;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        ਕਲਾਊਡ
+      </div>
+      <div
+        class="regional-text"
+        title="Cloud (Bengali)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.8rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 7%;
+          top: 23%;
+          animation: 8s ease-in-out 35.5s infinite normal none running float-2;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        ক্লাউড
+      </div>
+      <div
+        class="regional-text"
+        title="Cloud (Odia)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.2rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 24%;
+          top: 36%;
+          animation: 5s ease-in-out 36s infinite normal none running float-0;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        କ୍ଲାଉଡ଼
+      </div>
+      <div
+        class="regional-text"
+        title="Metaverse (Punjabi)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.5rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 41%;
+          top: 49%;
+          animation: 6s ease-in-out 36.5s infinite normal none running float-1;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        ਮੇਟਾਵਰਸ
+      </div>
+      <div
+        class="regional-text"
+        title="Metaverse (Bengali)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.8rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 58%;
+          top: 62%;
+          animation: 7s ease-in-out 37s infinite normal none running float-2;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        মেটাভার্স
+      </div>
+      <div
+        class="regional-text"
+        title="Metaverse (Odia)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.2rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 75%;
+          top: 75%;
+          animation: 8s ease-in-out 37.5s infinite normal none running float-0;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        ମେଟାଭର୍ସ
+      </div>
+      <div
+        class="regional-text"
+        title="Creation (Punjabi)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.5rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 92%;
+          top: 88%;
+          animation: 5s ease-in-out 38s infinite normal none running float-1;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        ਸਿਰਜਣਾ
+      </div>
+      <div
+        class="regional-text"
+        title="Creativity (Bengali)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.8rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 9%;
+          top: 1%;
+          animation: 6s ease-in-out 38.5s infinite normal none running float-2;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        সৃজনশীলতা
+      </div>
+      <div
+        class="regional-text"
+        title="Creativity (Odia)"
+        style="
+          position: absolute;
+          color: rgba(167, 139, 250, 0.6);
+          font-size: clamp(0.8rem, 0.6rem + 1vw, 1.2rem);
+          font-weight: 500;
+          white-space: nowrap;
+          left: 26%;
+          top: 14%;
+          animation: 7s ease-in-out 39s infinite normal none running float-0;
+          text-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+          transition: 0.3s;
+        "
+      >
+        ସୃଜନଶୀଳତା
+      </div>
+    </div>
+  </body>
+</html>
