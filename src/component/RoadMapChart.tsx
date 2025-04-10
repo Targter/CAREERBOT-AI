@@ -37,6 +37,7 @@ export default function VisualRoadmap() {
   const [edges, , onEdgesChange] = useEdgesState(initialEdges);
 
   const handleNodeClick = useCallback((event: React.MouseEvent, node: Node<RoadmapStep>) => {
+    event.preventDefault();
     setNodes((nds) =>
       nds.map((n) =>
         n.id === node.id ? { ...n, data: { ...n.data, completed: !n.data.completed } } : n
