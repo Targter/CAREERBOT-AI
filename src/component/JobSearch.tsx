@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
+import { motion, AnimatePresence} from "framer-motion";
 import { jobs } from "../types/Webscrap-company";
-import { Link ,useNavigate} from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 type Job = {
   id: number;
   title: string;
@@ -27,13 +27,13 @@ export default function JobBoard() {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [showIntro, setShowIntro] = useState(true); // New state for intro animation
   const inputRef = useRef<HTMLInputElement | null>(null);
-  const { scrollY } = useScroll();
-  const headerOpacity = useTransform(scrollY, [0, 200], [1, 0.7]);
+  // const { scrollY } = useScroll();
+  // const headerOpacity = useTransform(scrollY, [0, 200], [1, 0.7]);
   const navigate = useNavigate(); // Add useNavigate for programmatic navigation
 // 
-const [showResumePrompt, setShowResumePrompt] = useState(false); // New state for resume prompt
-  const [resume, setResume] = useState<File | null>(null); // New state for resume
-  const fileInputRef = useRef<HTMLInputElement | null>(null); // Ref for file input
+// const [showResumePrompt, setShowResumePrompt] = useState(false); // New state for resume prompt
+  // const [resume, setResume] = useState<File | null>(null); // New state for resume
+  // const fileInputRef = useRef<HTMLInputElement | null>(null); // Ref for file input
 
   // Check for resume in localStorage on mount
   useEffect(() => {
@@ -48,7 +48,7 @@ const [showResumePrompt, setShowResumePrompt] = useState(false); // New state fo
       }
       const blob = new Blob([ab], { type: mimeString });
       const storedFile = new File([blob], "resume.pdf", { type: mimeString });
-      setResume(storedFile);
+      // setResume(storedFile);
     }
   }, []);
 
