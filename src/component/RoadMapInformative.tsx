@@ -2,7 +2,6 @@ import React, { useState, useEffect, useCallback } from "react";
 import ReactFlow, {
   Background,
   Controls,
-  Edge,
   Node,
   Position,
   useNodesState,
@@ -98,8 +97,6 @@ const CustomEdge = ({
   sourceY,
   targetX,
   targetY,
-  sourcePosition,
-  targetPosition,
   markerEnd,
 }: EdgeProps) => {
   const edgePath = `M ${sourceX},${sourceY} C ${sourceX + 100},${sourceY} ${
@@ -360,7 +357,7 @@ const nodeTypes: NodeTypes = {
 
 const calculateLayout = (isTimeline: boolean) => {
   const verticalSpacing = 200;
-  const horizontalSpacing = 300;
+  // const horizontalSpacing = 300;
   
   // Timeline view positions
   if (isTimeline) {
@@ -422,7 +419,7 @@ export default function InteractiveRoadmap() {
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
   const [activeNode, setActiveNode] = useState<string | null>(null);
   const [rfInstance, setRfInstance] = useState<ReactFlowInstance | null>(null);
-
+console.log(activeNode)
   const updateSkill = useCallback((id: string, updates: Partial<Skill>) => {
     setNodes((nds) =>
       nds.map((node) =>
@@ -549,12 +546,13 @@ export default function InteractiveRoadmap() {
     nodesDraggable
   >
     <Background 
-      variant="dots" 
-      gap={40} 
-      size={1} 
-      color="#4B5563"
-      style={{ backgroundColor: 'rgba(17, 24, 39, 0.8)' }}
-    />
+  gap={40} 
+  size={1} 
+  // variant="dots" 
+  color="#4B5563"
+  style={{ backgroundColor: 'rgba(17, 24, 39, 0.8)' }}
+/>
+
     <Controls
       className="bg-gray-700 p-1 rounded-lg shadow-lg"
       showInteractive={false}

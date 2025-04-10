@@ -49,6 +49,7 @@ export default function JobBoard() {
       const blob = new Blob([ab], { type: mimeString });
       const storedFile = new File([blob], "resume.pdf", { type: mimeString });
       // setResume(storedFile);
+      console.log('storefile',storedFile)
     }
   }, []);
 

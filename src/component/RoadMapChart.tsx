@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, {  useCallback } from "react";
 import ReactFlow, {
   Background,
   Controls,
@@ -8,10 +8,9 @@ import ReactFlow, {
   useEdgesState,
 } from "reactflow";
 import "reactflow/dist/style.css";
-import { motion } from "framer-motion";
 
 type RoadmapStep = {
-  id: string;
+  id?: string;
   label: string;
   completed: boolean;
 };

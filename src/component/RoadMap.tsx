@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useCallback, useMemo } from "react";
 import ReactFlow, {
-  Controls,
-  Edge,
   Node,
   Position,
   useNodesState,
@@ -53,8 +51,8 @@ const CustomEdge = ({ id, sourceX, sourceY, targetX, targetY, markerEnd }: EdgeP
 
 const edgeTypes = { custom: CustomEdge };
 
-const SkillNode = ({ id, data, selected, skillsData = [] }: { id: string; data: Skill & { expanded: boolean }; selected?: boolean; skillsData: Skill[] }) => {
-  const [isHovered, setIsHovered] = useState(false);
+const SkillNode = ({ id, data, selected, skillsData = [] }: { id: string; data: Skill & { expanded: boolean }; selected?: boolean; skillsData?: Skill[] }) => {
+  const [isHovered, setIsHovered] = useState(false); 
   const [notes, setNotes] = useState(data.notes || "");
   const [isEditingNotes, setIsEditingNotes] = useState(false);
 
@@ -259,16 +257,16 @@ export default function InteractiveRoadmap() {
   const initialNodes = useMemo(() => calculateLayout(skillsData, isTimelineView), [skillsData, isTimelineView]);
   const initialEdges = useMemo(
     () =>
-      skillsData.flatMap((skill) => {
+      skillsData.flatMap((skill:any) => {
         const prereqArray = (skill.prerequisites || "").split(",").filter(Boolean);
-        return prereqArray.map((prereq) => ({
+        return prereqArray.map((prereq:any) => ({
           id: `e${prereq}-${skill.id}`,
           source: prereq,
           target: skill.id,
           type: "custom",
           animated: true,
-          markerEnd: { type: MarkerType.ArrowClosed, color: getCategoryColor(skillsData.find((s) => s.id === prereq)?.category || "core") },
-          style: { stroke: getCategoryColor(skillsData.find((s) => s.id === prereq)?.category || "core"), strokeWidth: 2 },
+          markerEnd: { type: MarkerType.ArrowClosed, color: getCategoryColor(skillsData.find((s:any) => s.id === prereq)?.category || "core") },
+          style: { stroke: getCategoryColor(skillsData.find((s:any) => s.id === prereq)?.category || "core"), strokeWidth: 2 },
         }));
       }),
     [skillsData]

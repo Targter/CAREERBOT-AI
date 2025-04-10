@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
   
 export const StackFilter: React.FC<{ onFilter: (stack: string) => void }> = ({ onFilter }) => {
   const stacks = ['Frontend', 'Backend', 'AI/ML', 'Java', 'Full Stack', 'DevOps'];

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 // Skill type definition
 interface Skill {
@@ -24,8 +24,8 @@ const SkillCosmosNavigator: React.FC = () => {
   const [showForm, setShowForm] = useState(true);
   const [hasLocalResume, setHasLocalResume] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate(); // For redirection
-
+  // const navigate = useNavigate(); // For redirection
+  
   useEffect(() => {
     const state = location.state as { jobDesc?: string } | null;
     if (state?.jobDesc) {

@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 // Placeholder logo (replace with your actual logo image)
 const logoPlaceholder = 'https://via.placeholder.com/40'; // Replace with your logo URL
-
+console.log(logoPlaceholder)
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false); // For mobile menu toggle
   const location = useLocation(); // To highlight active route
